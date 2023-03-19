@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<title>Formulário</title>
+		<script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		<script>
+			$(window).on("load", function(){
+				$('input[name="nome"]').focus();
+			});
+			$(document).ready(function(){
+				$('input[name="nome"]').focusout(function(){
+					var codigo=$('input[name="nome"]').val();
+					$('input[name="nome"]').val("Prof "+ codigo);
+				});
+			 	$('input[name="confirm"]').focusout(function(){
+					if ($('input[name="passe"]').val != $('input[name="confirm"]').val()){
+						$('input[name="passe"]').val("");
+						$('input[name="confirm"]').val("");
+						alert("Palavra-passe não confirmada. Tente novamente!")
+					};
+				});
+			});
+
+			$(window).on('submit', function(){
+				var ano = $('input:text[name="ano"]').val();
+				alert("Nome: " + $('input:text[name="nome"]').val() + " " + " | Idade: " + (2018=ano)
+			});	
+
+		</script>
+	</head>
+	<body>
+		<form method="post" action="">
+	Nome de utilizador: <br>
+	<input type="Text" name="name"> <br>
+	Palavra-passe: <br>
+	<input type="Text" name="passe"> <br>
+	Confirmação da Palavra-passe: <br>
+	<input type="Text" name="passe"> <br>
+	Data de nascimento: <br>
+	<input id="date" type="date" value="2022-11-22"> <br>
+	Nº do Cartão de Crédito: <br>
+	<input type="Text" name="Bilhete de Identidade" > <br>
+
+	<input type="submit" value="confirm">
+	<input type="reset" value="limpar">
+			
+	</body>
+</html>
